@@ -1,12 +1,13 @@
 <h1>List of Directors</h1>
 
-<a href="http://localhost:3000/director/new">Add a New Director</a>
+<a href="http://localhost:3000/directors/new">Add a New Director</a>
 
 <table>
   <tr>
     <th>Name</th>
     <th>Date of Birth</th>
     <th>Image</th>
+    <th>Actions</th>
   </tr>
   <% @directors.each do |director| %>
   <tr>
@@ -18,6 +19,11 @@
     </td>
     <td>
       <img src="<%= director.image_url %>">
+    </td>
+    <td>
+      <a href="http://localhost:3000/directors">Back</a>
+      <a href="http://localhost:3000/directors/<%= director.id %>/edit">Edit</a>
+      <a href="http://localhost:3000/delete_director/<%= director.id %>">Delete</a>
     </td>
   </tr>
   <% end %>
